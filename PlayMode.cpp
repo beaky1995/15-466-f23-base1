@@ -63,7 +63,7 @@ PlayMode::PlayMode() {
 		glm::u8vec4(172, 50, 50, 0x00),
 		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
 		glm::u8vec4(0x00, 0x00, 0x00, 0x00),
-	}
+	};
 
 
 /**************************************************************************************
@@ -75,12 +75,12 @@ PlayMode::PlayMode() {
 
 
 
-PPU466:: Tile tile
+PPU466:: Tile tile;
 //the tiles are 8 * 8 
 for(int i = 0; i < 8; i++){
 	for(int j = 0; j < 8; j++){
 		int index = i*8 + j;
-		if(zombieData[index] == ppu.palette_table[0]){
+		if(zombieData[index] == ppu.palette_table[0][0]){
 			//tile.bit0[i] = 
 		}
 	}
