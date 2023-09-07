@@ -1,8 +1,10 @@
 {
-    "cmake.configureOnOpen": false,
     "files.associations": {
-        "array": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "utility": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "array": "cpp"
     }
 }

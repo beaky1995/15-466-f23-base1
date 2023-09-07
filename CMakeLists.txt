@@ -1,5 +1,5 @@
 # This cmake file does not actually build anything. It is only for CLion to understand imports.
-
+# Given by Jacky Sun
 cmake_minimum_required(VERSION 3.21)
 project(15-466-f23-base1)
 

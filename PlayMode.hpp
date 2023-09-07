@@ -28,9 +28,15 @@ struct PlayMode : Mode {
 
 	//player position:
 	glm::vec2 player_at = glm::vec2(0.0f);
-
+	
+	float zombieDown = 0.0f;
+	bool flag = 1;
+	int startlag = 0;
+	int back;
 	//----- drawing handled by PPU466 -----
 
 	PPU466 ppu;
+	PPU466:: Tile zombieTile;
 	PPU466:: Tile playerTile;
+	PPU466:: Tile towerTile;
 };
