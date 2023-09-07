@@ -1,0 +1,10 @@
+^C:\USERS\WINLY\DOCUMENTS\CMU\15666\15-466-F23-BASE1\BUILD\CMAKEFILES\D5403A98855D096F948F0817FF4135FF\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/winly/Documents/CMU/15666/15-466-f23-base1 -BC:/Users/winly/Documents/CMU/15666/15-466-f23-base1/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/build/15-466-f23-base1.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

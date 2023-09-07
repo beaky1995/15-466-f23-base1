@@ -56,14 +56,8 @@ PlayMode::PlayMode() {
 	vector<glm::u8vec4> zombieData;
 	load_png(zombieName, &sizeSprite, &zombieData, LowerLeftOrigin);
 
-	//create palette for player manually
-	ppu.palette_table[0] = {
-		//manually using eyedropper tool
-		glm::u8vec4(55, 148, 110, 255),
-		glm::u8vec4(172, 50, 50, 0x00),
-		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
-		glm::u8vec4(0x00, 0x00, 0x00, 0x00),
-	};
+	
+	
 
 
 /**************************************************************************************
@@ -72,19 +66,55 @@ PlayMode::PlayMode() {
 *    Comment: We are discussing about how to transfer a vector data to tile(using bit),
 				he come out with this idea and I also use this logic for my work
 ***************************************************************************************/
+ppu.palette_table[7] = {
+		//manually using eyedropper tool
+		glm::u8vec4(55, 148, 110, 255),
+		glm::u8vec4(185, 0, 0, 255),
+		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
+		glm::u8vec4(0x00, 0x00, 0x00, 0x00),
+	};
 
 
 
-PPU466:: Tile tile;
 //the tiles are 8 * 8 
 for(int i = 0; i < 8; i++){
 	for(int j = 0; j < 8; j++){
 		int index = i*8 + j;
-		if(zombieData[index] == ppu.palette_table[0][0]){
-			//tile.bit0[i] = 
+		if(i == 0 && j == 0){
+			//cout <<"r:" <<  (int)zombieData[index].r  << " "<< "g: " << (int)zombieData[index].g <<" " << "b: "<< (int)zombieData[index].b << " " <<"a: "<< (int)zombieData[index].a << endl;
+			//cout <<"r:" <<  (int)ppu.palette_table[7][3].r << endl << "g: " << (int)ppu.palette_table[7][3].g << endl << "b: "<< (int)ppu.palette_table[7][3].b << endl <<"a: "<< (int)ppu.palette_table[7][3].a << endl;
+		}
+		if(zombieData[index] == ppu.palette_table[7][0]){
+			// if(j == 0 && i == 0){
+			// 	cout << "green" << endl;
+			// }
+			playerTile.bit0[i] &= ~(1 << j);
+			playerTile.bit1[i] &= ~(1 << j);
+		}
+		else if(zombieData[index] == ppu.palette_table[7][1]){
+			// if(j == 0 && i == 0){
+			// 	cout << "red" << endl;
+			// }
+			playerTile.bit0[i] |= (1 << j);
+			playerTile.bit1[i] &= ~(1 << j);
+		}
+		else if(zombieData[index] == ppu.palette_table[7][2]){
+			// if(j == 0 && i == 0){
+			// 	cout << "black" << endl;
+			// }
+			playerTile.bit0[i] &= ~(1 << j);
+			playerTile.bit1[i] |= (1 << j);
+		}
+		else if(zombieData[index] == ppu.palette_table[7][3]){
+			// if(j == 0 && i == 0){
+			// 	cout << "transparent" << endl;
+			// }
+			playerTile.bit0[i] |= (1 << j);
+			playerTile.bit1[i] |= (1 << j);
 		}
 	}
 }
+ppu.tile_table[32] = playerTile;
 
 
 
@@ -126,13 +156,14 @@ for(int i = 0; i < 8; i++){
 		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
 	};
 
-	//used for the player:
-	ppu.palette_table[7] = {
-		glm::u8vec4(0x00, 0x00, 0x00, 0x00),
-		glm::u8vec4(0xff, 0xff, 0x00, 0xff),
-		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
-		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
-	};
+	
+	// //used for the player:
+	// ppu.palette_table[7] = {
+	// 	glm::u8vec4(0x00, 0x00, 0x00, 0x00),
+	// 	glm::u8vec4(0xff, 0xff, 0x00, 0xff),
+	// 	glm::u8vec4(0x00, 0x00, 0x00, 0xff),
+	// 	glm::u8vec4(0x00, 0x00, 0x00, 0xff),
+	// };
 
 	//used for the misc other sprites:
 	ppu.palette_table[6] = {
