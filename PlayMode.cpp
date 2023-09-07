@@ -6,7 +6,9 @@
 //for glm::value_ptr() :
 #include <glm/gtc/type_ptr.hpp>
 
+#include "load_save_png.hpp"
 #include <random>
+using namespace std;
 
 PlayMode::PlayMode() {
 	//TODO:
@@ -48,27 +50,65 @@ PlayMode::PlayMode() {
 		}
 	}
 
-	//use sprite 32 as a "player":
-	ppu.tile_table[32].bit0 = {
-		0b01111110,
-		0b11111111,
-		0b11111111,
-		0b11111111,
-		0b11111111,
-		0b11111111,
-		0b11111111,
-		0b01111110,
+	//load the player sprite and its palette
+	glm::uvec2 sizeSprite(8,8);
+	string zombieName = "../Asset/zombie_test.png";
+	vector<glm::u8vec4> zombieData;
+	load_png(zombieName, &sizeSprite, &zombieData, LowerLeftOrigin);
+
+	//create palette for player manually
+	ppu.palette_table[0] = {
+		//manually using eyedropper tool
+		glm::u8vec4(55, 148, 110, 255),
+		glm::u8vec4(172, 50, 50, 0x00),
+		glm::u8vec4(0x00, 0x00, 0x00, 0xff),
+		glm::u8vec4(0x00, 0x00, 0x00, 0x00),
 	};
-	ppu.tile_table[32].bit1 = {
-		0b00000000,
-		0b00000000,
-		0b00011000,
-		0b00100100,
-		0b00000000,
-		0b00100100,
-		0b00000000,
-		0b00000000,
-	};
+
+
+/**************************************************************************************
+*    Title: transfering png data(vector) to tile data
+*    Credit: inspired by Haoze(Jacky) Sun
+*    Comment: We are discussing about how to transfer a vector data to tile(using bit),
+				he come out with this idea and I also use this logic for my work
+***************************************************************************************/
+
+
+
+PPU466:: Tile tile;
+//the tiles are 8 * 8 
+for(int i = 0; i < 8; i++){
+	for(int j = 0; j < 8; j++){
+		int index = i*8 + j;
+		if(zombieData[index] == ppu.palette_table[0][0]){
+			//tile.bit0[i] = 
+		}
+	}
+}
+
+
+
+	// use sprite 32 as a "player":
+	// ppu.tile_table[32].bit0 = {
+	// 	0b01111110,
+	// 	0b11111111,
+	// 	0b11111111,
+	// 	0b11111111,
+	// 	0b11111111,
+	// 	0b11111111,
+	// 	0b11111111,
+	// 	0b01111110,
+	// };
+	// ppu.tile_table[32].bit1 = {
+	// 	0b00000000,
+	// 	0b00000000,
+	// 	0b00011000,
+	// 	0b00100100,
+	// 	0b00000000,
+	// 	0b00100100,
+	// 	0b00000000,
+	// 	0b00000000,
+	// };
 
 	//makes the outside of tiles 0-16 solid:
 	ppu.palette_table[0] = {
