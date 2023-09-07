@@ -1,0 +1,302 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "Release/15-466-f23-base1.exe"
+		},
+		{
+			"path" : "Release/15-466-f23-base1.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/SDL2/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/freetype/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/glm/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/harfbuzz/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/libogg/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/libopus/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/libopusenc/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/libpng/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/opus-tools/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/opusfile/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/winly/Documents/CMU/15666/15-466-f23-base1/../nest-libs/windows/zlib/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				4,
+				8,
+				10,
+				12,
+				13,
+				15,
+				17
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "15-466-f23-base1::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "15-466-f23-base1",
+	"nameOnDisk" : "15-466-f23-base1.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				4,
+				8,
+				10,
+				12,
+				13,
+				15,
+				17
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1,
+				3,
+				5,
+				6,
+				7,
+				9,
+				11,
+				14,
+				16,
+				18,
+				19
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "data_path.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "data_path.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GL.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GL.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "gl_compile_program.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gl_compile_program.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gl_errors.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "glcorearb.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Load.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Load.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "load_save_png.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "load_save_png.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Mode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Mode.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "PlayMode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "PlayMode.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "PPU466.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "PPU466.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "read_write_chunk.hpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}
